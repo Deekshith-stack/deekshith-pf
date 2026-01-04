@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools - Admin</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <h3 style="font-size: 1.5rem; color: var(--dark-blue);">Admin<span
+                    style="color: var(--primary-accent);">.</span></h3>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="messages.html" class="menu-item">
+                <i class="fas fa-envelope"></i> Messages
+            </a>
+            <a href="projects.html" class="menu-item">
+                <i class="fas fa-project-diagram"></i> Projects
+            </a>
+            <a href="skills.html" class="menu-item">
+                <i class="fas fa-code"></i> Skills
+            </a>
+            <a href="certifications.html" class="menu-item">
+                <i class="fas fa-certificate"></i> Certifications
+            </a>
+            <a href="ai-tools.html" class="menu-item active">
+                <i class="fas fa-robot"></i> AI Tools
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="preview.html" class="menu-item">
+                <i class="fas fa-eye"></i> Live Preview
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="flex-center">
+                <h2 style="margin: 0; font-size: 1.5rem;">AI Tools Suite</h2>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <div class="grid" style="grid-template-columns: 1fr 2fr; gap: 30px;">
+                <!-- Tools Selector -->
+                <div class="card" style="border: none; padding: 0;">
+                    <div
+                        style="background: var(--dark-blue); color: white; padding: 20px; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                        <h3 style="color: white; margin: 0;">Tools</h3>
+                    </div>
+                    <div style="padding: 10px;">
+                        <button class="menu-item" onclick="showTool('bio')"
+                            style="width: 100%; border: none; background: none; cursor: pointer; text-align: left;">
+                            <i class="fas fa-user-edit"></i> Bio Generator
+                        </button>
+                        <button class="menu-item" onclick="showTool('resume')"
+                            style="width: 100%; border: none; background: none; cursor: pointer; text-align: left;">
+                            <i class="fas fa-file-alt"></i> Resume Summary
+                        </button>
+                        <button class="menu-item" onclick="showTool('skills')"
+                            style="width: 100%; border: none; background: none; cursor: pointer; text-align: left;">
+                            <i class="fas fa-lightbulb"></i> Skill Suggestions
+                        </button>
+                        <button class="menu-item" onclick="showTool('seo')"
+                            style="width: 100%; border: none; background: none; cursor: pointer; text-align: left;">
+                            <i class="fas fa-search"></i> SEO Optimizer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tool Output Area -->
+                <div class="card" style="border: none;">
+
+                    <!-- Bio Generator -->
+                    <div id="bioTool" class="tool-content">
+                        <h3 style="margin-bottom: 20px;">AI Bio Generator</h3>
+                        <div class="form-group">
+                            <label class="form-label">Key Highlights (comma separated)</label>
+                            <input type="text" id="bioKeywords" class="form-control"
+                                placeholder="Student, Developer, React, Open Source, Passionate">
+                        </div>
+                        <button class="btn btn-primary" onclick="generateBio()">Generate Bio</button>
+
+                        <div style="margin-top: 20px;">
+                            <label class="form-label">Result:</label>
+                            <textarea id="bioResult" class="form-control" rows="5" readonly></textarea>
+                            <button class="btn btn-secondary" onclick="copyToClipboard('bioResult')"
+                                style="margin-top: 10px; padding: 6px 12px; font-size: 0.85rem;"><i
+                                    class="fas fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+
+                    <!-- Hidden by default via JS -->
+                    <div id="resumeTool" class="tool-content" style="display:none;">
+                        <h3 style="margin-bottom: 20px;">Resume Summary Generator</h3>
+                        <div class="form-group">
+                            <label class="form-label">Experience Level</label>
+                            <select id="expLevel" class="form-control">
+                                <option value="fresher">Fresher / Student</option>
+                                <option value="intern">Internship Experience</option>
+                                <option value="junior">Junior Developer</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="generateResumeSummary()">Generate Summary</button>
+                        <div style="margin-top: 20px;">
+                            <label class="form-label">Result:</label>
+                            <textarea id="resumeResult" class="form-control" rows="5" readonly></textarea>
+                        </div>
+                    </div>
+
+                    <div id="skillsTool" class="tool-content" style="display:none;">
+                        <h3 style="margin-bottom: 20px;">Skill Suggestions</h3>
+                        <p style="color: #666; margin-bottom: 20px;">Based on market trends for:</p>
+                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                            <button class="btn btn-secondary" onclick="generateSkills('web')">Web Dev</button>
+                            <button class="btn btn-secondary" onclick="generateSkills('data')">Data Science</button>
+                            <button class="btn btn-secondary" onclick="generateSkills('app')">Mobile App</button>
+                        </div>
+                        <div id="skillsResult"
+                            style="background: var(--light-gray); padding: 15px; border-radius: 8px;">
+                            Select a category to see suggestions...
+                        </div>
+                    </div>
+
+                    <div id="seoTool" class="tool-content" style="display:none;">
+                        <h3 style="margin-bottom: 20px;">SEO Title Generator</h3>
+                        <div class="form-group">
+                            <label class="form-label">Page / Content</label>
+                            <input type="text" id="seoInput" class="form-control" placeholder="e.g. Project Portfolio">
+                        </div>
+                        <button class="btn btn-primary" onclick="generateSeo()">Generate Meta Tags</button>
+                        <div style="margin-top: 20px;">
+                            <label class="form-label">Result:</label>
+                            <textarea id="seoResult" class="form-control" rows="5" readonly></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/ai-engine.js"></script>
+    <script>
+        function showTool(toolId) {
+            document.querySelectorAll('.tool-content').forEach(el => el.style.display = 'none');
+            document.getElementById(toolId + 'Tool').style.display = 'block';
+        }
+
+        // --- Mock Generator Functions (Connecting to AI Engine in real implementations) ---
+        function generateBio() {
+            const keywords = document.getElementById('bioKeywords').value || 'Student, Developer';
+            const result = AIEngine.generate('bio', { keywords });
+            typeWriter('bioResult', result);
+        }
+
+        function generateResumeSummary() {
+            const level = document.getElementById('expLevel').value;
+            const result = AIEngine.generate('resume', { level });
+            typeWriter('resumeResult', result);
+        }
+
+        function generateSkills(category) {
+            const result = AIEngine.generate('skills', { category });
+            document.getElementById('skillsResult').innerHTML = result; // HTML content
+        }
+
+        function generateSeo() {
+            const topic = document.getElementById('seoInput').value;
+            const result = AIEngine.generate('seo', { topic });
+            typeWriter('seoResult', result);
+        }
+
+        function copyToClipboard(id) {
+            const el = document.getElementById(id);
+            el.select();
+            document.execCommand('copy');
+            alert('Copied to clipboard!');
+        }
+
+        // Typewriter effect
+        function typeWriter(elementId, text) {
+            const el = document.getElementById(elementId);
+            el.value = '';
+            let i = 0;
+            const speed = 20;
+            function type() {
+                if (i < text.length) {
+                    el.value += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+    </script>
+</body>
+
+</html>

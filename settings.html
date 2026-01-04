@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <h3 style="font-size: 1.5rem; color: var(--dark-blue);">Admin<span
+                    style="color: var(--primary-accent);">.</span></h3>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="messages.html" class="menu-item">
+                <i class="fas fa-envelope"></i> Messages
+            </a>
+            <a href="projects.html" class="menu-item">
+                <i class="fas fa-project-diagram"></i> Projects
+            </a>
+            <a href="skills.html" class="menu-item">
+                <i class="fas fa-code"></i> Skills
+            </a>
+            <a href="certifications.html" class="menu-item">
+                <i class="fas fa-certificate"></i> Certifications
+            </a>
+            <a href="ai-tools.html" class="menu-item">
+                <i class="fas fa-robot"></i> AI Tools
+            </a>
+            <a href="settings.html" class="menu-item active">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="preview.html" class="menu-item">
+                <i class="fas fa-eye"></i> Live Preview
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="flex-center">
+                <h2 style="margin: 0; font-size: 1.5rem;">Settings</h2>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <div class="card" style="max-width: 600px; border: none; box-shadow: var(--shadow-sm);">
+                <form>
+                    <h3 style="margin-bottom: 20px;">Profile Information</h3>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" value="Boonamukkala Deekshith Reddy">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Job Title / Tagline</label>
+                        <input type="text" class="form-control" value="Computer Science Student">
+                    </div>
+
+                    <h3 style="margin-top: 40px; margin-bottom: 20px;">Theme & Appearance</h3>
+                    <div class="form-group">
+                        <label class="form-label">Primary Color</label>
+                        <input type="color" class="form-control" value="#E97F4A" style="height: 50px;">
+                    </div>
+
+                    <h3 style="margin-top: 40px; margin-bottom: 20px;">Security</h3>
+                    <div class="form-group">
+                        <label class="form-label">Change Admin Password</label>
+                        <input type="password" class="form-control" placeholder="New Password">
+                    </div>
+
+                    <h3 style="margin-top: 40px; margin-bottom: 20px;">WhatsApp API Configuration</h3>
+                    <div class="alert"
+                        style="background: #e6fffa; color: #047481; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem;">
+                        <i class="fas fa-info-circle"></i> <strong>Note:</strong> Automated sending requires a Meta
+                        Business or Twilio API account. Enter credentials below to enable server-side sending.
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">API Provider</label>
+                        <select class="form-control">
+                            <option value="twilio">Twilio</option>
+                            <option value="meta">Meta (Facebook) Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">API Key / Auth Token</label>
+                        <input type="password" class="form-control" placeholder="******************">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Sender Phone Number</label>
+                        <input type="text" class="form-control" placeholder="+1234567890">
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+
+</html>

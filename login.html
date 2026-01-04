@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <div class="login-wrapper">
+        <div class="login-card fade-in-up">
+            <div class="text-center" style="margin-bottom: 30px;">
+                <h2 style="color: var(--dark-blue);">Admin Panel</h2>
+                <p style="color: #666;">Please login to manage your portfolio</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" class="form-control"
+                            placeholder="Enter password (admin123)" required>
+                        <i class="fas fa-lock" style="position: absolute; right: 15px; top: 12px; color: #999;"></i>
+                    </div>
+                </div>
+
+                <div id="errorMsg" style="color: #e74c3c; font-size: 0.9rem; margin-bottom: 15px; display: none;">
+                    <i class="fas fa-exclamation-circle"></i> Invalid password
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login to Dashboard</button>
+            </form>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="../index.html" style="color: var(--muted-blue); font-size: 0.9rem;"><i
+                        class="fas fa-arrow-left"></i> Back to Website</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const success = AdminApp.login(password);
+
+            if (success) {
+                window.location.href = 'dashboard.html';
+            } else {
+                const error = document.getElementById('errorMsg');
+                error.style.display = 'block';
+                // Shake animation
+                const card = document.querySelector('.login-card');
+                card.style.transform = 'translateX(10px)';
+                setTimeout(() => card.style.transform = 'translateX(-10px)', 100);
+                setTimeout(() => card.style.transform = 'translateX(0)', 200);
+            }
+        });
+    </script>
+</body>
+
+</html>

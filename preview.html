@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Preview - Admin</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .preview-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #e0e5ec;
+            padding: 20px;
+            overflow: hidden;
+            height: calc(100vh - 70px);
+            /* Adjust based on header height */
+        }
+
+        .preview-controls {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .device-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #666;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .device-btn:hover,
+        .device-btn.active {
+            color: var(--primary-accent);
+            background: rgba(233, 127, 74, 0.1);
+        }
+
+        .preview-frame-wrapper {
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        iframe {
+            border: 1px solid #ddd;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            background: white;
+        }
+
+        /* Device Sizes */
+        .w-desktop {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .w-tablet {
+            width: 768px;
+        }
+
+        .w-mobile {
+            width: 375px;
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <h3 style="font-size: 1.5rem; color: var(--dark-blue);">Admin<span
+                    style="color: var(--primary-accent);">.</span></h3>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="messages.html" class="menu-item">
+                <i class="fas fa-envelope"></i> Messages
+            </a>
+            <a href="projects.html" class="menu-item">
+                <i class="fas fa-project-diagram"></i> Projects
+            </a>
+            <a href="skills.html" class="menu-item">
+                <i class="fas fa-code"></i> Skills
+            </a>
+            <a href="certifications.html" class="menu-item">
+                <i class="fas fa-certificate"></i> Certifications
+            </a>
+            <a href="ai-tools.html" class="menu-item">
+                <i class="fas fa-robot"></i> AI Tools
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="preview.html" class="menu-item active">
+                <i class="fas fa-eye"></i> Live Preview
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main" style="display: flex; flex-direction: column; height: 100vh;">
+        <header class="admin-header">
+            <div class="flex-center">
+                <h2 style="margin: 0; font-size: 1.5rem;">Live Web View</h2>
+            </div>
+            <div class="flex-center">
+                <span class="text-muted" style="margin-right: 15px; font-size: 0.9rem;">Changes are auto-saved. Refresh
+                    to update.</span>
+                <a href="../index.html" target="_blank" class="btn btn-primary"
+                    style="padding: 8px 16px; font-size: 0.9rem;">
+                    <i class="fas fa-external-link-alt"></i> Open Full Site
+                </a>
+            </div>
+        </header>
+
+        <div class="preview-container">
+            <div class="preview-controls">
+                <button class="device-btn active" onclick="setDevice('desktop')" title="Desktop View"><i
+                        class="fas fa-desktop"></i></button>
+                <button class="device-btn" onclick="setDevice('tablet')" title="Tablet View"><i
+                        class="fas fa-tablet-alt"></i></button>
+                <button class="device-btn" onclick="setDevice('mobile')" title="Mobile View"><i
+                        class="fas fa-mobile-alt"></i></button>
+                <div style="width: 1px; height: 20px; background: #ddd; margin: 0 5px;"></div>
+                <button class="device-btn" onclick="refreshPreview()" title="Refresh Preview"><i
+                        class="fas fa-sync-alt"></i></button>
+            </div>
+
+            <div id="wrapper" class="preview-frame-wrapper w-desktop">
+                <iframe id="previewFrame" src="../index.html"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        function setDevice(device) {
+            const wrapper = document.getElementById('wrapper');
+            const btns = document.querySelectorAll('.device-btn');
+
+            // Update buttons
+            btns.forEach(btn => btn.classList.remove('active'));
+
+            // Map icon click to class
+            if (device === 'desktop') {
+                wrapper.className = 'preview-frame-wrapper w-desktop';
+                btns[0].classList.add('active');
+            } else if (device === 'tablet') {
+                wrapper.className = 'preview-frame-wrapper w-tablet';
+                btns[1].classList.add('active');
+            } else if (device === 'mobile') {
+                wrapper.className = 'preview-frame-wrapper w-mobile';
+                btns[2].classList.add('active');
+            }
+        }
+
+        function refreshPreview() {
+            const iframe = document.getElementById('previewFrame');
+            iframe.src = iframe.src;
+            // Add spin animation class to refresh button temporarily
+            const btn = document.querySelector('.fa-sync-alt').parentElement;
+            const icon = btn.querySelector('i');
+            icon.style.transition = 'transform 0.5s';
+            icon.style.transform = 'rotate(180deg)';
+            setTimeout(() => icon.style.transform = 'rotate(0deg)', 500);
+        }
+    </script>
+</body>
+
+</html>

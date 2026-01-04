@@ -1,0 +1,90 @@
+/* Responsive CSS */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-xl: 2.5rem;
+        --spacing-xxl: 4rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Hidden by default, toggled via JS */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        /* Adjust based on navbar height */
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        /* Visible on mobile */
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        /* Stack grid items */
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .hero-section {
+        text-align: center;
+        flex-direction: column-reverse;
+        /* Image on top or bottom based on preference */
+    }
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    :root {
+        --spacing-lg: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-xs);
+    }
+}

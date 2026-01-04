@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Student Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <h3>Portfolio<span style="color: var(--primary-accent);">.</span></h3>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="mobile-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="text-center fade-in-up">About <span style="color: var(--primary-accent);">Me</span></h2>
+            <p class="text-center fade-in-up delay-100" style="max-width: 700px; margin: 0 auto 50px;">
+                I am Boonamukkala Deekshith Reddy, a driven computer science student passionate about building software
+                that solves real-world problems.
+            </p>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+
+                <div class="card fade-in-up delay-200">
+                    <h3 style="color: var(--dark-blue);"><i class="fas fa-graduation-cap"
+                            style="color: var(--primary-accent); margin-right: 10px;"></i> Education</h3>
+                    <div class="timeline" style="margin-top: 20px;">
+                        <div class="timeline-item"
+                            style="border-left: 2px solid var(--border-color); padding-left: 20px; padding-bottom: 30px; position: relative;">
+                            <div
+                                style="position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: var(--primary-accent); border-radius: 50%;">
+                            </div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">Bachelor of Technology</h4>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 5px;">Computer Science &
+                                Engineering</p>
+                            <p style="font-size: 0.8rem; color: #999;">2023 - Present</p>
+                        </div>
+                        <div class="timeline-item"
+                            style="border-left: 2px solid var(--border-color); padding-left: 20px; position: relative;">
+                            <div
+                                style="position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: var(--muted-blue); border-radius: 50%;">
+                            </div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">High School</h4>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 5px;">Science Stream</p>
+                            <p style="font-size: 0.8rem; color: #999;">Completed 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in-up delay-300">
+                    <h3 style="color: var(--dark-blue);"><i class="fas fa-bullseye"
+                            style="color: var(--primary-accent); margin-right: 10px;"></i> Career Goals</h3>
+                    <ul style="margin-top: 20px; list-style: none;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: start;">
+                            <i class="fas fa-check-circle"
+                                style="color: var(--soft-highlight); margin-right: 10px; margin-top: 5px;"></i>
+                            <span>Master Full Stack Development with modern frameworks like React and Node.js.</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: start;">
+                            <i class="fas fa-check-circle"
+                                style="color: var(--soft-highlight); margin-right: 10px; margin-top: 5px;"></i>
+                            <span>Contribute to Open Source projects to give back to the community.</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: start;">
+                            <i class="fas fa-check-circle"
+                                style="color: var(--soft-highlight); margin-right: 10px; margin-top: 5px;"></i>
+                            <span>Secure a challenging internship to apply theoretical knowledge in practice.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="card fade-in-up delay-200" style="margin-top: 40px;">
+                <h3 style="color: var(--dark-blue);"><i class="fas fa-bolt"
+                        style="color: var(--primary-accent); margin-right: 10px;"></i> Strengths</h3>
+                <div class="flex" style="flex-wrap: wrap; margin-top: 20px; gap: 15px;">
+                    <span style="background: var(--light-gray); padding: 8px 16px; border-radius: 20px;">Problem
+                        Solving</span>
+                    <span style="background: var(--light-gray); padding: 8px 16px; border-radius: 20px;">Team
+                        Collaboration</span>
+                    <span
+                        style="background: var(--light-gray); padding: 8px 16px; border-radius: 20px;">Adaptability</span>
+                    <span style="background: var(--light-gray); padding: 8px 16px; border-radius: 20px;">Quick
+                        Learner</span>
+                    <span
+                        style="background: var(--light-gray); padding: 8px 16px; border-radius: 20px;">Communication</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-brand">Portfolio<span style="color: var(--primary-accent);">.</span></div>
+                <span class="footer-tagline">Designed & Built for the Future</span>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://github.com/yourusername" target="_blank" class="social-glass" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-glass" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:contact@example.com" class="social-glass" title="Email"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="assets/documents/resume.pdf" target="_blank" class="social-glass" title="Resume"><i
+                        class="fas fa-file-alt"></i></a>
+            </div>
+
+            <div class="footer-right">
+                &copy; 2026 Deekshith. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <h3 style="font-size: 1.5rem; color: var(--dark-blue);">Admin<span
+                    style="color: var(--primary-accent);">.</span></h3>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="messages.html" class="menu-item">
+                <i class="fas fa-envelope"></i> Messages
+            </a>
+            <a href="projects.html" class="menu-item">
+                <i class="fas fa-project-diagram"></i> Projects
+            </a>
+            <a href="skills.html" class="menu-item">
+                <i class="fas fa-code"></i> Skills
+            </a>
+            <a href="certifications.html" class="menu-item">
+                <i class="fas fa-certificate"></i> Certifications
+            </a>
+            <a href="ai-tools.html" class="menu-item">
+                <i class="fas fa-robot"></i> AI Tools
+            </a>
+            <a href="access-logs.html" class="menu-item">
+                <i class="fas fa-history"></i> Access Logs
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="preview.html" class="menu-item">
+                <i class="fas fa-eye"></i> Live Preview
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-header">
+            <!-- Hacker Clock Container -->
+            <div id="hackerClock" class="hacker-clock-container">
+                <div class="hacker-clock-date">Searching Network...</div>
+                <div class="hacker-clock-time">00:00:00</div>
+            </div>
+
+            <div class="flex-center">
+                <button id="themeToggle" class="btn btn-secondary" style="margin-right: 15px;" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="../index.html" target="_blank" class="btn btn-secondary"
+                    style="padding: 8px 16px; margin-right: 15px; font-size: 0.9rem;">
+                    <i class="fas fa-external-link-alt"></i> View Site
+                </a>
+                <button id="logoutBtn" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- Statistics Cards -->
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <!-- Total Projects -->
+                <div class="stat-card">
+                    <div>
+                        <p>Total Projects</p>
+                        <h3 id="statProjects">...</h3>
+                        <span
+                            style="display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 20px;">
+                            <i class="fas fa-arrow-up"></i> 12% increase
+                        </span>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                </div>
+
+                <!-- Skills Listed -->
+                <div class="stat-card">
+                    <div>
+                        <p>Skills Listed</p>
+                        <h3 id="statSkills">...</h3>
+                        <span
+                            style="display: inline-block; margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+                            Across 4 categories
+                        </span>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+
+                <!-- Messages -->
+                <div class="stat-card">
+                    <div>
+                        <p>New Messages</p>
+                        <h3 id="statMessages">...</h3>
+                        <span
+                            style="display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #f59e0b; background: rgba(245, 158, 11, 0.1); padding: 4px 10px; border-radius: 20px;">
+                            <i class="fas fa-envelope"></i> Action needed
+                        </span>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+
+                <!-- Live Views -->
+                <div class="stat-card">
+                    <div>
+                        <p>Live Profile Views</p>
+                        <h3 id="statViews">...</h3>
+                        <span
+                            style="display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 4px 10px; border-radius: 20px;">
+                            <i class="fas fa-eye"></i> Real-time
+                        </span>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 30px;">
+                <div class="card" style="border: none; box-shadow: var(--shadow-sm);">
+                    <div class="flex-between"
+                        style="border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px;">
+                        <h3 style="margin: 0;">Recent Projects</h3>
+                        <a href="projects.html" style="color: var(--primary-accent); font-size: 0.9rem;">View All</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentProjectsTable">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" style="border: none; box-shadow: var(--shadow-sm);">
+                    <div class="flex-between"
+                        style="border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px;">
+                        <h3 style="margin: 0;">Quick Actions</h3>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="projects.html" class="btn btn-secondary"
+                            style="text-align: left; border-color: var(--border-color); color: var(--dark-blue);">
+                            <i class="fas fa-plus" style="margin-right: 10px; color: var(--primary-accent);"></i> Add
+                            New Project
+                        </a>
+                        <a href="skills.html" class="btn btn-secondary"
+                            style="text-align: left; border-color: var(--border-color); color: var(--dark-blue);">
+                            <i class="fas fa-plus" style="margin-right: 10px; color: var(--primary-accent);"></i> Add
+                            New Skill
+                        </a>
+                        <a href="ai-tools.html" class="btn btn-secondary"
+                            style="text-align: left; border-color: var(--border-color); color: var(--dark-blue);">
+                            <i class="fas fa-magic" style="margin-right: 10px; color: var(--primary-accent);"></i>
+                            Generate Bio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../assets/js/data-manager.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDashboard();
+        });
+
+        function updateDashboard() {
+            // Get Data
+            const projects = DataManager.getProjects();
+            const skills = DataManager.getSkills();
+            const messages = DataManager.getMessages();
+            const views = DataManager.getProfileViews();
+
+            // Update Counts with animation effect
+            animateValue("statProjects", 0, projects.length, 1000);
+            animateValue("statSkills", 0, skills.length, 1000);
+            animateValue("statMessages", 0, messages.length, 1000);
+            animateValue("statViews", 0, views, 1500); // Slower animation for larger number
+
+            // Populate Recent Projects
+            const recentTable = document.getElementById('recentProjectsTable');
+            recentTable.innerHTML = '';
+
+            // Show recent 3
+            projects.slice(0, 3).forEach(p => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${p.title}</td>
+                    <td>${p.category}</td>
+                    <td>${new Date().toLocaleDateString()}</td>
+                `;
+                recentTable.appendChild(tr);
+            });
+
+            if (projects.length === 0) {
+                recentTable.innerHTML = '<tr><td colspan="3" style="text-align:center; color:#999;">No projects yet</td></tr>';
+            }
+        }
+
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Sidebar Toggle for Mobile
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('adminSidebar');
+
+        if (window.innerWidth <= 768) {
+            sidebarToggle.style.display = 'block';
+        }
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Student Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <h3>Portfolio<span style="color: var(--primary-accent);">.</span></h3>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="certifications.html" class="nav-link">Certifications</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="mobile-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="text-center fade-in-up">Get In <span style="color: var(--primary-accent);">Touch</span></h2>
+            <p class="text-center fade-in-up delay-100" style="max-width: 700px; margin: 0 auto 50px;">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll
+                try my best to get back to you!
+            </p>
+
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1000px; margin: 0 auto;">
+
+                <!-- Contact Info -->
+                <div class="fade-in-up delay-200">
+                    <h3 style="color: var(--dark-blue); margin-bottom: 25px;">Contact Info</h3>
+
+                    <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(233, 127, 74, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-accent); font-size: 1.25rem;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">Email</h4>
+                            <p style="color: #666;">boonamukkaladeekshith@gmail.com</p>
+                            <a href="mailto:boonamukkaladeekshith@gmail.com"
+                                style="color: var(--primary-accent); font-size: 0.9rem; font-weight: 500;">Send
+                                Email</a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(96, 123, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted-blue); font-size: 1.25rem;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">Location</h4>
+                            <p style="color: #666;">Nellore, AP India</p>
+                        </div>
+                    </div>
+
+                    <h4 style="font-size: 1.1rem; margin-top: 40px; margin-bottom: 15px;">Follow Me</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://github.com/yourusername" target="_blank" class="btn btn-secondary"
+                            style="width: 40px; height: 40px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-secondary"
+                            style="width: 40px; height: 40px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card fade-in-up delay-300">
+                    <form id="contactForm">
+                        <div style="margin-bottom: 20px;">
+                            <label for="name"
+                                style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-blue);">Name</label>
+                            <input type="text" id="name" required placeholder="Your Name"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); outline: none; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor = 'var(--primary-accent)'"
+                                onblur="this.style.borderColor = 'var(--border-color)'">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label for="email"
+                                style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-blue);">Email</label>
+                            <input type="email" id="email" required placeholder="Your Email"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); outline: none; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor = 'var(--primary-accent)'"
+                                onblur="this.style.borderColor = 'var(--border-color)'">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label for="whatsapp"
+                                style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-blue);">WhatsApp
+                                Number</label>
+                            <input type="tel" id="whatsapp" required placeholder="Your WhatsApp Number"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); outline: none; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor = 'var(--primary-accent)'"
+                                onblur="this.style.borderColor = 'var(--border-color)'">
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <label for="message"
+                                style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-blue);">Message</label>
+                            <textarea id="message" required rows="5" placeholder="Your Message"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); outline: none; font-family: inherit; transition: border-color 0.3s;"
+                                onfocus="this.style.borderColor = 'var(--primary-accent)'"
+                                onblur="this.style.borderColor = 'var(--border-color)'"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Premium Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-brand">Portfolio<span style="color: var(--primary-accent);">.</span></div>
+                <span class="footer-tagline">Designed & Built for the Future</span>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://github.com/yourusername" target="_blank" class="social-glass" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-glass" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:contact@example.com" class="social-glass" title="Email"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="assets/documents/resume.pdf" target="_blank" class="social-glass" title="Resume"><i
+                        class="fas fa-file-alt"></i></a>
+            </div>
+
+            <div class="footer-right">
+                &copy; 2026 Deekshith. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data-manager.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const msg = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                message: document.getElementById('message').value
+            };
+
+            const refId = DataManager.saveMessage(msg);
+
+            alert('Message Sent Successfully! Reference ID: ' + refId);
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

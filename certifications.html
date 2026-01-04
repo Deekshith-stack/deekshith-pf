@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Certifications - Admin</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <h3 style="font-size: 1.5rem; color: var(--dark-blue);">Admin<span
+                    style="color: var(--primary-accent);">.</span></h3>
+        </div>
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="messages.html" class="menu-item">
+                <i class="fas fa-envelope"></i> Messages
+            </a>
+            <a href="projects.html" class="menu-item">
+                <i class="fas fa-project-diagram"></i> Projects
+            </a>
+            <a href="skills.html" class="menu-item">
+                <i class="fas fa-code"></i> Skills
+            </a>
+            <a href="certifications.html" class="menu-item active">
+                <i class="fas fa-certificate"></i> Certifications
+            </a>
+            <a href="ai-tools.html" class="menu-item">
+                <i class="fas fa-robot"></i> AI Tools
+            </a>
+            <a href="access-logs.html" class="menu-item">
+                <i class="fas fa-history"></i> Access Logs
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <a href="preview.html" class="menu-item">
+                <i class="fas fa-eye"></i> Live Preview
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <!-- Hacker Clock Container -->
+            <div id="hackerClock" class="hacker-clock-container">
+                <div class="hacker-clock-date">Searching Network...</div>
+                <div class="hacker-clock-time">00:00:00</div>
+            </div>
+
+            <div class="flex-center">
+                <button id="themeToggle" class="btn btn-secondary" style="margin-right: 15px;" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="flex-center" style="gap: 15px;">
+                    <button class="btn btn-primary" onclick="openModal()">
+                        <i class="fas fa-plus"></i> Add Certification
+                    </button>
+                    <button id="logoutBtn" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <div class="card" style="border: none; box-shadow: var(--shadow-sm);">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Certification</th>
+                            <th>Issuer</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Meta Front-End Developer</td>
+                            <td>Coursera</td>
+                            <td>Dec 2024</td>
+                            <td>
+                                <button class="action-btn btn-edit"><i class="fas fa-pen"></i></button>
+                                <button class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="../assets/js/admin.js"></script>
+</body>
+
+</html>
